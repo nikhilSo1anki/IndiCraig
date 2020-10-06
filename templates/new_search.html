@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h2 style="text-align:center;">{{search | title}}</h2>
+
+          
+
+ 
+    <div class="row">
+        {%for post in final_posting%}
+                <div class="col s4">
+                    <div class="card">
+                        <div class="card-image" >
+                           <img src="{{post.3}}" alt="Product">
+                        </div>
+                        <div class="card-content">
+                           <h6><b>{{post.0}}</b></h6>
+                        </div>
+                        <div class="card-action">
+                            <p style="text-align:center;"><a href="{{post.1}}"> More </a></p>
+                            <p style="text-align:center;margin-right:25px;">Price : {{post.2}}</p>
+                        </div>
+                    </div>
+                </div>
+        {%endfor%}
+         
+    </div>
+ 
+            
+
+{% endblock content %}

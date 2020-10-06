@@ -1,0 +1,103 @@
+{% load static %}
+<html lang="en">
+<head>
+    <title>IndiCraig</title>
+    <link rel="icon" href="https://owenkenny.com/wp-content/uploads/2017/09/OKP-empathy-icon.png"  type="image/icon type">
+    <meta charset="UTF-8" />  
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+<nav>
+    <div class="container nav-wrapper">
+        <a href="/" class="brand-logo">IndiCraig</a>
+        <ul id="nav-mobile" class="right">
+            <li><a href="/">Home</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 style="text-align: center">Search ADs nearby you</h1><br>
+    <div class="row">
+        <div class="col s4">
+            <!-- Promo Content 1 goes here -->
+            <div class="center">
+                <i class="large material-icons" style="color: #EE6E73">flash_on</i>
+                <p>Search at speed of flash</p>
+                <p class="light center">Scrape away right here with a beautiful GUI.</p>
+            </div>
+        </div>
+
+        <div class="col s4">
+            <!-- Promo Content 2 goes here -->
+            <div class="center">
+                <i class="large material-icons" style="color: orange">camera</i>
+                <p>Filter your searches</p>
+                <p class="light center">Show your nearby ads and contact them.</p>
+            </div>
+        </div>
+
+        <div class="col s4">
+            <!-- Promo Content 3 goes here -->
+            <div class="center">
+                <i class="large material-icons" style="color: blue">chrome_reader_mode</i>
+                <p>A much sexier front-end</p>
+                <p class="light center">I built this with ❤️</p>
+            </div>
+        </div>
+    </div>
+
+    <form action="new_search" method="post">
+
+    {% csrf_token %}
+
+  
+    <input type="text" name="search" value="search" style="text-align:center;">
+    <center>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+    </button>
+    </center>
+
+    </form>
+
+
+    {% block content %}
+
+    {% endblock content %}
+
+</div>
+
+         <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Information : </h5>
+                <p class="grey-text text-lighten-4">This is the page containing craiglist's site items with great visual interface, so you can search ads nearby you easily!</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links :</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://ahmedabad.craigslist.org/search/sss?postedToday=1">Today's Posts</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.computerhope.com/jargon/c/craigslist.htm#:~:text=Craigslist%20is%20a%20website%20that%20allows%20users%20to,and%20was%20converted%20into%20a%20website%20in%201996.">about CraigList origins</a></li>
+          
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2020 Copyright
+            <a class="grey-text text-lighten-4 right" href="https://ahmedabad.craigslist.org/" style="font-size:30px;">Source</a>
+            </div>
+          </div>
+        </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
